@@ -1,1 +1,28 @@
+[
+    {
+        "question": "Which of the following is an 'immutable' data type in Python?",
+        "options": ["A) List", "B) Dictionary", "C) Tuple", "D) Set"],
+        "answer": "C"
+    },
+    {
+        "question": "What is the standard port number for HTTP?",
+        "options": ["A) 443", "B) 80", "C) 21", "D) 22"],
+        "answer": "B"
+    },
+    {
+        "question": "In Git, which command is used to send your local commits to a remote server?",
+        "options": ["A) git pull", "B) git commit", "C) git push", "D) git add"],
+        "answer": "C"
+    },
+    {
+        "question": "What does 'SQL' stand for?",
+        "options": ["A) Structured Query Language", "B) Simple Quick Logic", "C) Standard Queue List", "D) Sequential Query Link"],
+        "answer": "A"
+    },
+    {
+        "question": "Which layer of the OSI model is responsible for IP addressing and routing?",
+        "options": ["A) Data Link", "B) Transport", "C) Network", "D) Physical"],
+        "answer": "C"
+    }
+]
 
