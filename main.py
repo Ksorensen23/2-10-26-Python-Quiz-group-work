@@ -1,4 +1,5 @@
 import json
+from colorama import Fore
 
 # 1. THE LIBRARIAN'S FUNCTION
 def load_questions():
@@ -20,10 +21,10 @@ def play_game():
         guess = input("Your Answer (A/B/C/D): ").upper()
         
         if guess == q['answer']:
-            print("Correct! +10 points.")
+            print(Fore.GREEN + "Correct! +10 points.")
             score += 10
         else:
-            print(f"Wrong! The answer was {q['answer']}.")
+            print(Fore.RED + f"Wrong! The answer was {q['answer']}.")
             
     print(f"\nGame Over! Final Score: {score}")
 
