@@ -55,8 +55,18 @@
 		  "answer": "D"
 	}
 	{
-		"question": "what programming language is the closest to regular speech when it comes to commands",
-		 "options": ["A) HTML", "B) Python", "C) Java", "D) File Jython"],
+		"question": "what programming language is the closest to regular speech when it comes to commands?",
+		 "options": ["A) HTML", "B) Python", "C) Java", "D) Jython"],
 		  "answer": "A"
+	}
+	{
+		"question": "Does a PC need to be on the same subbnet as its defualt gateway?",
+		 "options": ["A) no", "B) yes", "C) it depends", "D) Idk"],
+		  "answer": "B"
+	}
+	{
+		"question": "What is the diffrence between const and let? (please choose the best answer)",
+		 "options": ["A) const is global", "B) both A and D", "C) fucntonally there is no diffrence", "D) let is within the function"],
+		  "answer": "B"
 	}
 ]
