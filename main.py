@@ -1,9 +1,20 @@
 import json
+import colorama import Fore, init
+init(autoreset=True)
 
 # 1. THE LIBRARIAN'S FUNCTION
 def load_questions():
     with open('questions.json', 'r') as file:
         return json.load(file)
+
+# Keagan work, save player score to a text file
+def save_score(name, score):
+    s = score
+    n = name
+    with open("PlayerScore.txt" , "a") as file:
+        file.write("Name: " + str(n) + " " + "|" + " " + "Score: " + str(s) + "\n") 
+    with open("PlyaerScore.txt") as file:
+        print(file.read())
 
 # 2. THE REFEREE'S MAIN LOOP
 def play_game():
@@ -13,6 +24,11 @@ def play_game():
     player = 1
 
     print("--- WELCOME TO THE IT QUIZ BATTLE ---")
+    score = 0
+
+    name = input("Enter Your name\n")
+    print("Welcome " + name)
+    print("\n--- WELCOME TO THE IT QUIZ BATTLE ---")
     
     for q in questions:
         
@@ -46,7 +62,17 @@ def play_game():
         elif player == 1:
             player = 2
 
-    print(f"\nGame Over! Final Scores:\n\nPlayer 1 - {p1Score} Points\nPlayer 2 - {p2Score} Points")
+            print(Fore.GREEN + "Correct! +10 points.")
+            score += 10
+            print("\n Your score is:", score)
+        else:
+            print(Fore.RED + f"Wrong! The answer was {q['answer']}.")
+            
+            
+    print(f"\nGame Over! Final Score: {score}")
+    save_score(name, score)
+
+
     
 if __name__ == "__main__":
     play_game()

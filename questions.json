@@ -24,5 +24,49 @@
         "options": ["A) Data Link", "B) Transport", "C) Network", "D) Physical"],
         "answer": "C"
     }
+	{
+		"question": "What is the proper way to trigger a function with a button?",
+		 "options": ["A) onTap", "B) onPush", "C) whenClick", "D) onClick"],
+		  "answer": "D"
+	}
+	{
+		"question": "How many bits are used when making an IPv4 address?",
+		 "options": ["A) 64", "B) 128", "C) 32", "D) 8"],
+		  "answer": "C"
+	}
+	{
+		"question": "What does HTML stand for?",
+		 "options": ["A) Hyper Text Markup Language", "B) Hyper Text Makeup Language", "C) Hyper Toddler Models leotard", "D) Http, Terminal, and M++, Language"],
+		  "answer": "A"
+	}
+	{
+		"question": "Which one of these is a private IP address?",
+		 "options": ["A) 192.169.0.0", "B) 172.14.16.21", "C) 192.0.66.51", "D) 192.168.255.256"],
+		  "answer": "B"
+	}
+	{
+		"question": "Why do we need the <html></html> tags?",
+		 "options": ["A) so the brower can read it as an html file", "B) you can't write in html without it", "C) nothing will happen if you forget", "D) mr. Hamilton puts it in for us we don't need to know what it does just that it works"],
+		  "answer": "A"
+	}
+	{
+		"question": "What is the function of FTP?",
+		 "options": ["A) Serving of web pages", "B) Email service", "C) Directory access", "D) File exchange"],
+		  "answer": "D"
+	}
+	{
+		"question": "what programming language is the closest to regular speech when it comes to commands?",
+		 "options": ["A) HTML", "B) Python", "C) Java", "D) Jython"],
+		  "answer": "A"
+	}
+	{
+		"question": "Does a PC need to be on the same subbnet as its defualt gateway?",
+		 "options": ["A) no", "B) yes", "C) it depends", "D) Idk"],
+		  "answer": "B"
+	}
+	{
+		"question": "What is the diffrence between const and let? (please choose the best answer)",
+		 "options": ["A) const is global", "B) both A and D", "C) fucntonally there is no diffrence", "D) let is within the function"],
+		  "answer": "B"
+	}
 ]
-
