@@ -42,18 +42,19 @@ def play_game():
 
             # if player one, add to their score
             if player == 1:
-                print("Correct! Player 1 +10 points.")
+                print(Fore.GREEN + "Correct! Player 1 +10 points.")
                 p1Score += 10
+                print("\n Player 1 score is:", p1Score)
                 
             # if player two, add to their score
             elif player == 2:
-                print("Correct! Player 2 +10 points.")
+                print(Fore.GREEN + "Correct! Player 2 +10 points.")
                 p2Score += 10
-                
+                print("\n Player 2 score is:", p2Score)
                 
         else:
-            print(f"Wrong! The answer was {q['answer']}.")
-
+            print(Fore.RED + f"Wrong! The answer was {q['answer']}.")
+            
         # This changes which player is active
         #   it must be put here otherwise it would need to be
         #   duplicated in the correct and incorrect logic conditions
@@ -61,13 +62,6 @@ def play_game():
             player = 1
         elif player == 1:
             player = 2
-
-            print(Fore.GREEN + "Correct! +10 points.")
-            score += 10
-            print("\n Your score is:", score)
-        else:
-            print(Fore.RED + f"Wrong! The answer was {q['answer']}.")
-            
             
     print(f"\nGame Over! Final Score: {score}")
     save_score(name, score)
