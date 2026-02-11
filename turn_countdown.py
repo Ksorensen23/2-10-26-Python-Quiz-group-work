@@ -9,7 +9,7 @@ for i in range(11):                         #sets the timer length, default at 1
 end = time.time();                          #declares the end of the timer
 
 length = end - start;                       #finds the total elapsed time
-length = int(length)                        #rounds the time to the nearest second
+length = int(length);                       #rounds the time to the nearest second
 
 print("your time is up!", length - 1, "it took seconds");    #displays total elapsed time
 
@@ -27,3 +27,4 @@ for i in range(11):
 
 
 #>==================================================
+
