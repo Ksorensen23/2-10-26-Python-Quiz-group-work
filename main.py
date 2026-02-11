@@ -13,7 +13,7 @@ def save_score(name, score):
     n = name
     with open("PlayerScore.txt" , "a") as file:
         file.write("Name: " + str(n) + " " + "|" + " " + "Score: " + str(s) + "\n") 
-    with open("PlyaerScore.txt") as file:
+    with open("PlayerScore.txt") as file:
         print(file.read())
 
 # 2. THE REFEREE'S MAIN LOOP
