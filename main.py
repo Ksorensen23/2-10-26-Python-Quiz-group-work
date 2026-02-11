@@ -1,6 +1,6 @@
 import json
-import colorama 
-import Fore, init
+from colorama import init, Fore, Back, Style
+
 init(autoreset=True)
 
 # 1. THE LIBRARIAN'S FUNCTION
@@ -20,11 +20,6 @@ def save_score(name, score):
 # 2. THE REFEREE'S MAIN LOOP
 def play_game():
     questions = load_questions()
-    p1Score = 0
-    p2Score = 0
-    player = 1
-
-    print("--- WELCOME TO THE IT QUIZ BATTLE ---")
     score = 0
 
     name = input("Enter Your name\n")
@@ -32,37 +27,19 @@ def play_game():
     print("\n--- WELCOME TO THE IT QUIZ BATTLE ---")
     
     for q in questions:
-        
         print("\n" + q['question'])
         for option in q['options']:
             print(option)
             
-        guess = input("\nPlayer" + f" {player} " + "Answer (A/B/C/D): ").upper()
+        guess = input("Your Answer (A/B/C/D): ").upper()
         
         if guess == q['answer']:
-
-            # if player one, add to their score
-            if player == 1:
-                print(Fore.GREEN + "Correct! Player 1 +10 points.")
-                p1Score += 10
-                print("\n Player 1 score is:", p1Score)
-                
-            # if player two, add to their score
-            elif player == 2:
-                print(Fore.GREEN + "Correct! Player 2 +10 points.")
-                p2Score += 10
-                print("\n Player 2 score is:", p2Score)
-                
+            print(Fore.GREEN + "Correct! +10 points.")
+            score += 10
+            print("\n Your score is:", score)
         else:
             print(Fore.RED + f"Wrong! The answer was {q['answer']}.")
             
-        # This changes which player is active
-        #   it must be put here otherwise it would need to be
-        #   duplicated in the correct and incorrect logic conditions
-        if player == 2:
-            player = 1
-        elif player == 1:
-            player = 2
             
     print(f"\nGame Over! Final Score: {score}")
     save_score(name, score)
@@ -71,4 +48,3 @@ def play_game():
     
 if __name__ == "__main__":
     play_game()
-
