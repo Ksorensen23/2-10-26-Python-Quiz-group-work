@@ -1,6 +1,6 @@
 import json
-import colorama import Fore
-
+import colorama import Fore, init
+init(autoreset=True)
 
 # 1. THE LIBRARIAN'S FUNCTION
 def load_questions():
