@@ -1,7 +1,9 @@
 import json
-from colorama import init, Fore, Back, Style
 
-init(autoreset=True)
+RED = "\033[31m"
+GREEN = "\033[32m"
+YELLOW = "\033[33m"
+BLUE = "\033[34m"
 
 # 1. THE LIBRARIAN'S FUNCTION
 def load_questions():
@@ -13,7 +15,7 @@ def save_score(name, score):
     s = score
     n = name
     with open("PlayerScore.txt" , "a") as file:
-        file.write("Name: " + str(n) + " " + "|" + " " + "Score: " + str(s) + "\n") 
+        file.write("Name: " + str(n) + " " + "|" + " " + "Score: " + str(s) + "\n")
     with open("PlayerScore.txt") as file:
         print(file.read())
 
@@ -40,18 +42,18 @@ def play_game():
 
             # if player one, add to their score
             if player == 1:
-                print(Fore.GREEN + "Correct! Player 1 +10 points.")
+                print(GREEN + "Correct! Player 1 +10 points.")
                 p1Score += 10
                 print("\n Player 1 score is:", p1Score)
                 
             # if player two, add to their score
             elif player == 2:
-                print(Fore.GREEN + "Correct! Player 2 +10 points.")
+                print(GREEN + "Correct! Player 2 +10 points.")
                 p2Score += 10
                 print("\n Player 2 score is:", p2Score)
                 
         else:
-            print(Fore.RED + f"Wrong! The answer was {q['answer']}.")
+            print(RED + f"Wrong! The answer was {q['answer']}.")
             
         # This changes which player is active
         #   it must be put here otherwise it would need to be
@@ -62,7 +64,9 @@ def play_game():
             player = 2
             
     print(f"\nGame Over! Final Scores: \n\nPlayer 1 - {p1Score} Points\nPlayer 2 - {p2Score} Points")
-    save_score(name, score)
+    # Save the total score for this game session
+    total_score = p1Score + p2Score
+    save_score(name, total_score)
 
 
     
