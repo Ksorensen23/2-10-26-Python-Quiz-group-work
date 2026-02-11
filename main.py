@@ -4,6 +4,7 @@ RED = "\033[31m"
 GREEN = "\033[32m"
 YELLOW = "\033[33m"
 BLUE = "\033[34m"
+RESET = "\033[0m"
 
 # 1. THE LIBRARIAN'S FUNCTION
 def load_questions():
@@ -42,18 +43,18 @@ def play_game():
 
             # if player one, add to their score
             if player == 1:
-                print(GREEN + "Correct! Player 1 +10 points.")
+                print(GREEN + "Correct! Player 1 +10 points." + RESET)
                 p1Score += 10
                 print("\n Player 1 score is:", p1Score)
                 
             # if player two, add to their score
             elif player == 2:
-                print(GREEN + "Correct! Player 2 +10 points.")
+                print(GREEN + "Correct! Player 2 +10 points." + RESET)
                 p2Score += 10
                 print("\n Player 2 score is:", p2Score)
                 
         else:
-            print(RED + f"Wrong! The answer was {q['answer']}.")
+            print(RED + f"Wrong! The answer was {q['answer']}." + RESET)
             
         # This changes which player is active
         #   it must be put here otherwise it would need to be
