@@ -16,8 +16,12 @@ def load_questions():
         base_path = os.path.dirname(__file__)
         file_path = os.path.join(base_path, "questions.json")
 
-        with open(file_path, "r", encoding="utf-8") as file:
-            return json.load(file)
+        data = None;
+        with open(file_path, "r", encoding="utf-8") as file:   #gets the questions.json file
+            data = json.load(file);                 #allows the contents of questions.json to be called as a variable
+            random.shuffle(data);
+
+        return data;
 
     except FileNotFoundError:
         print(RED + "Error: questions.json not found." + RESET)
