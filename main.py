@@ -1,4 +1,5 @@
 import json
+import os
 
 RED = "\033[31m"
 GREEN = "\033[32m"
@@ -7,10 +8,16 @@ BLUE = "\033[34m"
 RESET = "\033[0m"
 
 # 1. THE LIBRARIAN'S FUNCTION
+
+
 def load_questions():
     try:
-        with open('questions.json', 'r', encoding='utf-8') as file:
+        base_path = os.path.dirname(__file__)
+        file_path = os.path.join(base_path, "questions.json")
+
+        with open(file_path, "r", encoding="utf-8") as file:
             return json.load(file)
+
     except FileNotFoundError:
         print(RED + "Error: questions.json not found." + RESET)
         return []
