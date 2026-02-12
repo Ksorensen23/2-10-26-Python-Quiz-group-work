@@ -28,7 +28,7 @@
 		"question": "What is the proper way to trigger a function with a button?",
 		 "options": ["A) onTap", "B) onPush", "C) whenClick", "D) onClick"],
 		  "answer": "D"
-	}
+	},
 	{
 		"question": "How many bits are used when making an IPv4 address?",
 		 "options": ["A) 64", "B) 128", "C) 32", "D) 8"],
