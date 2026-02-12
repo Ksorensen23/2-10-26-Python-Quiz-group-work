@@ -15,8 +15,8 @@ def load_questions():
         print(RED + "Error: questions.json not found." + RESET)
         return []
 # Keagan work, save player score to a text file
-def save_score(name, score, name2, score2):
-    s = score
+def save_score(name, score1, name2, score2):
+    s = score1
     n = name
     s2 = score2
     n2 = name2
@@ -32,7 +32,9 @@ def play_game():
     score2 = 0
     player = 1
     
-    name = input("Enter Your name\n")
+    name2 = input("Enter Name 1\n")
+    name = input("Enter Name 2\n")
+   
     print("Welcome " + name)
     print("\n--- WELCOME TO THE IT QUIZ BATTLE ---")
     
@@ -72,7 +74,7 @@ def play_game():
     print(f"\nGame Over! Final Scores: \n\nPlayer 1 - {score1} Points\nPlayer 2 - {score2} Points")
     # Save the total score for this game session
 
-    save_score(name, score, name2, score2)
+    save_score(name, score1, name2, score2)
 
 
     
