@@ -2,7 +2,7 @@ import json;
 import random;
 
 def randomize_questions():
-    with open("questions.json", "r") as file:
+    with open("questions.json", "r", encoding="utf-8") as file:   #gets the questions.json file
         data = json.load(file);                 #allows the contents of questions.json to be called as a variable
         random.shuffle(data);                   #shuffles the data groups
 
@@ -10,7 +10,7 @@ def randomize_questions():
 
 randomize_questions();                          #calls the entire randomize_questions() function
 
-#IMPORTANT, to be merged with the countdown function eventually in the comlplete logic file
+#IMPORTANT, to be merged with the countdown function in the complete logic file
 
 
 #IGNORE, used to test randomization functionality
