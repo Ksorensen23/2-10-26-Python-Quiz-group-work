@@ -44,8 +44,8 @@ def play_game():
     score2 = 0
     player = 1
 
-    name2 = input("Enter Name 1\n")
-    name = input("Enter Name 2\n")
+    name = input("Enter Name 1\n")
+    name2 = input("Enter Name 2\n")
 
     ASCII_ART1 = r'''
         _____________
