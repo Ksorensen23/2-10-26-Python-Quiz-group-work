@@ -6,7 +6,7 @@ def randomize_questions():
         data = json.load(file);                 #allows the contents of questions.json to be called as a variable
         random.shuffle(data);                   #shuffles the data groups
 
-    print(json.dumps(data, indent=4));          #prints the data of questions.json
+#print(json.dumps(data, indent=4));             #prints the data of questions.json
 
 randomize_questions();                          #calls the entire randomize_questions() function
 
@@ -28,3 +28,4 @@ print_test();
 '''
 
 #>==================================================
+
