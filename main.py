@@ -65,7 +65,7 @@ def play_game():
        ---------------
     '''
 
-    print("Welcome " + name)
+    print("Welcome " + name + " and " + name2)
     print("\n--- WELCOME TO THE IT QUIZ BATTLE ---")
     print(BLUE + ASCII_ART1 + RESET)
 
@@ -75,11 +75,17 @@ def play_game():
         time.sleep(3)
         clear_screen()
 
+        #displays who's turn it is
+        if player==1:
+            print(f"\n{name}'s turn!")
+        elif player==2:
+            print(f"\n{name2}'s turn!")
+            
         print("\n" + q['question'])
         for option in q['options']:
             print(option)
             
-        guess = input("\nPlayer" + f" {player} " + "Answer (A/B/C/D): ").upper()
+        guess = input(f"\nAnswer (A/B/C/D): ").upper()
         
         if guess == q['answer']:
 
@@ -106,7 +112,7 @@ def play_game():
         elif player == 1:
             player = 2
             
-    print(f"\nGame Over! Final Scores: \n\nPlayer 1 - {score1} Points\nPlayer 2 - {score2} Points")
+    print(f"\nGame Over! Final Scores: \n\n{name} - {score1} Points\n{name2} - {score2} Points")
     # Save the total score for this game session
 
     save_score(name, score1, name2, score2)
