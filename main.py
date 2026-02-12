@@ -12,11 +12,13 @@ def load_questions():
         return json.load(file)
 
 # Keagan work, save player score to a text file
-def save_score(name, score):
+def save_score(name, score, name2, score2):
     s = score
     n = name
+    s2 = score2
+    n2 = name2
     with open("PlayerScore.txt" , "a") as file:
-        file.write("Name: " + str(n) + " " + "|" + " " + "Score: " + str(s) + "\n")
+        file.write("Player 1: " + str(n) + " " + "," + " " + "Score: " + str(s) + "|" + "Player 2: " + str(n2) + " " + "," + " " + "Score: " + str(s2) + "\n")
     with open("PlayerScore.txt") as file:
         print(file.read())
 
@@ -66,8 +68,8 @@ def play_game():
             
     print(f"\nGame Over! Final Scores: \n\nPlayer 1 - {p1Score} Points\nPlayer 2 - {p2Score} Points")
     # Save the total score for this game session
-    total_score = p1Score + p2Score
-    save_score(name, total_score)
+
+    save_score(name, score, name2, score2)
 
 
     
