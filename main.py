@@ -21,16 +21,6 @@ def load_questions():
     except FileNotFoundError:
         print(RED + "Error: questions.json not found." + RESET)
         return []
-# Keagan work, save player score to a text file
-def save_score(name, score1, name2, score2):
-    s = score1
-    n = name
-    s2 = score2
-    n2 = name2
-    with open("PlayerScore.txt" , "a") as file:
-        file.write("Player 1: " + str(n) + " " + "," + " " + "Score: " + str(s) + "|" + "Player 2: " + str(n2) + " " + "," + " " + "Score: " + str(s2) + "\n")
-    with open("PlayerScore.txt") as file:
-        print(file.read())
 
 # 2. THE REFEREE'S MAIN LOOP
 def play_game():
@@ -78,12 +68,19 @@ def play_game():
         elif player == 1:
             player = 2
             
-    print(f"\nGame Over! Final Scores: \n\nPlayer 1 - {score1} Points\nPlayer 2 - {score2} Points")
+    print(f"\nGame Over! Final Scores: \n\n{name} - {score1} Points\n{name2} - {score2} Points")
     # Save the total score for this game session
 
-    save_score(name, score1, name2, score2)
 
-
+# Keagan work, save player score to a text file
+def save_score(name, score1, name2, score2):
+    s = score1
+    n = name
+    s2 = score2
+    n2 = name2
+    with open("PlayerScore.txt" , "a") as file:
+        file.write("Player 1: " + str(n) + " " + "," + " " + "Score: " + str(s) + "|" + "Player 2: " + str(n2) + " " + "," + " " + "Score: " + str(s2) + "\n")
+        file.close()
     
 if __name__ == "__main__":
     play_game()
