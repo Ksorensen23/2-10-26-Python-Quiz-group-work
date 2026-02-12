@@ -14,21 +14,22 @@ def load_questions():
     except FileNotFoundError:
         print(RED + "Error: questions.json not found." + RESET)
         return []
-
 # Keagan work, save player score to a text file
-def save_score(name, score):
+def save_score(name, score, name2, score2):
     s = score
     n = name
+    s2 = score2
+    n2 = name2
     with open("PlayerScore.txt" , "a") as file:
-        file.write("Name: " + str(n) + " " + "|" + " " + "Score: " + str(s) + "\n")
+        file.write("Player 1: " + str(n) + " " + "," + " " + "Score: " + str(s) + "|" + "Player 2: " + str(n2) + " " + "," + " " + "Score: " + str(s2) + "\n")
     with open("PlayerScore.txt") as file:
         print(file.read())
 
 # 2. THE REFEREE'S MAIN LOOP
 def play_game():
     questions = load_questions()
-    p1Score = 0
-    p2Score = 0
+    score1 = 0
+    score2 = 0
     player = 1
     
     name = input("Enter Your name\n")
@@ -48,14 +49,14 @@ def play_game():
             # if player one, add to their score
             if player == 1:
                 print(GREEN + "Correct! Player 1 +10 points." + RESET)
-                p1Score += 10
-                print("\n Player 1 score is:", p1Score)
+                score1 += 10
+                print("\n Player 1 score is:", score1)
                 
             # if player two, add to their score
             elif player == 2:
                 print(GREEN + "Correct! Player 2 +10 points." + RESET)
-                p2Score += 10
-                print("\n Player 2 score is:", p2Score)
+                score2 += 10
+                print("\n Player 2 score is:", score2)
                 
         else:
             print(RED + f"Wrong! The answer was {q['answer']}." + RESET)
@@ -68,10 +69,10 @@ def play_game():
         elif player == 1:
             player = 2
             
-    print(f"\nGame Over! Final Scores: \n\nPlayer 1 - {p1Score} Points\nPlayer 2 - {p2Score} Points")
+    print(f"\nGame Over! Final Scores: \n\nPlayer 1 - {score1} Points\nPlayer 2 - {score2} Points")
     # Save the total score for this game session
-    total_score = p1Score + p2Score
-    save_score(name, total_score)
+
+    save_score(name, score, name2, score2)
 
 
     
