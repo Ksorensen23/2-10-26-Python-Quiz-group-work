@@ -30,8 +30,7 @@ def save_score(name, score1, name2, score2):
     n2 = name2
     with open("PlayerScore.txt" , "a") as file:
         file.write("Player 1: " + str(n) + " " + "," + " " + "Score: " + str(s) + "|" + "Player 2: " + str(n2) + " " + "," + " " + "Score: " + str(s2) + "\n")
-    with open("PlayerScore.txt") as file:
-        print(file.read())
+        file.close()
 
 # 2. THE REFEREE'S MAIN LOOP
 def clear_screen():
